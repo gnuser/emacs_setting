@@ -62,7 +62,7 @@
 (require 'init-utils)
 (require 'init-ui)
 (require 'init-tools)
-;; (require 'init-evil)
+;;(require 'init-evil)
 (require 'init-lsp)
 (require 'init-git)
 (require 'init-dev)
@@ -71,6 +71,9 @@
 
 ;; standalone apps
 (require 'init-text)
+(require 'init-shell)
+
+;; (require 'init-benchmark)
 
 ;; MacOS specific
 (when (eq system-type 'darwin)

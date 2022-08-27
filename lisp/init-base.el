@@ -413,6 +413,7 @@ Else, call `comment-or-uncomment-region' on the current line."
                                   (when (eq system-type 'gnu/linux) "xdg-open")))
   (browse-url-handlers '(("\\`file:" . browse-url-default-browser))))
 
+
 ;; Buffer manager
 ;;
 ;; `sR': switch to saved filter groups
@@ -517,12 +518,6 @@ Else, call `comment-or-uncomment-region' on the current line."
 (use-package try
   :ensure t
   :commands try try-and-refresh)
-
-;; MacOS specific
-(use-package exec-path-from-shell
-  :ensure t
-  :when (eq system-type 'darwin)
-  :hook (after-init . exec-path-from-shell-initialize))
 
 (provide 'init-base)
 
