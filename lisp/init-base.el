@@ -118,7 +118,7 @@
 (setq default-input-method "TeX")
 
 ;; Keep clean but enable `menu-bar' in MacOS
-(when (and (fboundp 'menu-bar-mode) (not (eq system-type 'darwin)))
+(when (fboundp 'menu-bar-mode)
   (menu-bar-mode -1))
 (when (fboundp 'tool-bar-mode)
   (tool-bar-mode -1))
