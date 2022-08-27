@@ -521,6 +521,8 @@ Else, call `comment-or-uncomment-region' on the current line."
   :ensure t
   :commands try try-and-refresh)
 
+(xterm-mouse-mode 1)
+
 (provide 'init-base)
 
 ;;; init-base.el ends here
