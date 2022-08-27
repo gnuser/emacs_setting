@@ -73,6 +73,9 @@
 (require 'init-text)
 (require 'init-shell)
 
+
+;; IDE
+(require 'init-neotree)
 ;; (require 'init-benchmark)
 
 ;; MacOS specific

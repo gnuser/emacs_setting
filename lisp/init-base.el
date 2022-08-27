@@ -58,6 +58,8 @@
 ;; No eyes distraction
 (setq blink-cursor-mode nil)
 
+(setq-default cursor-type 'bar)
+
 ;; Smooth scroll & friends
 (setq scroll-step 2
       scroll-margin 2
