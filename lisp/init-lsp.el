@@ -53,36 +53,69 @@
                       ;; HACK: prevent `lsp-mode' to add `company-capf' back.
                       company-capf)))
 
-;; lsp-mode
+;; https://huadeyu.tech/tools/emacs-setup-notes.html
 (use-package lsp-mode
   :ensure t
-  :hook (prog-mode . lsp-deferred)
-  :bind (:map lsp-mode-map
-         ("C-c f" . lsp-format-region)
-         ("C-c d" . lsp-describe-thing-at-point)
-         ("C-c a" . lsp-execute-code-action)
-         ("C-c r" . lsp-rename))
-  :config
-  (with-no-warnings
-    (lsp-enable-which-key-integration t))
   :custom
-  (lsp-keymap-prefix "C-c l")
-  (lsp-enable-links nil)                    ;; no clickable links
-  (lsp-enable-folding nil)                  ;; use `hideshow' instead
-  (lsp-enable-snippet nil)                  ;; no snippets, it requires `yasnippet'
-  (lsp-enable-file-watchers nil)            ;; performance matters
-  (lsp-enable-text-document-color nil)      ;; as above
-  (lsp-enable-symbol-highlighting nil)      ;; as above
-  (lsp-enable-on-type-formatting nil)       ;; as above
-  (lsp-enable-indentation nil)              ;; don't change my code without my permission
-  (lsp-semantic-tokens-apply-modifiers nil) ;; don't override token faces
-  (lsp-headerline-breadcrumb-enable nil)    ;; keep headline clean
-  (lsp-modeline-code-actions-enable nil)    ;; keep modeline clean
-  (lsp-modeline-diagnostics-enable nil)     ;; as above
-  (lsp-log-io nil)                          ;; debug only
-  (lsp-auto-guess-root t)                   ;; Yes, I'm using projectile
-  (lsp-keep-workspace-alive nil)            ;; auto kill lsp server
-  (lsp-eldoc-enable-hover nil))             ;; disable eldoc hover
+  (lsp-enable-snippet t)
+  (lsp-keep-workspace-alive t)
+  (lsp-enable-xref t)
+  (lsp-enable-imenu t)
+  (lsp-enable-completion-at-point nil)
+
+  :config  
+  (add-hook 'go-mode-hook #'lsp)
+  (add-hook 'python-mode-hook #'lsp)
+  (add-hook 'c++-mode-hook #'lsp)
+  (add-hook 'c-mode-hook #'lsp)
+  (add-hook 'rust-mode-hook #'lsp)
+  (add-hook 'html-mode-hook #'lsp)
+  (add-hook 'js-mode-hook #'lsp)
+  (add-hook 'typescript-mode-hook #'lsp)
+  (add-hook 'json-mode-hook #'lsp)
+  (add-hook 'yaml-mode-hook #'lsp)
+  (add-hook 'dockerfile-mode-hook #'lsp)
+  (add-hook 'shell-mode-hook #'lsp)
+  (add-hook 'css-mode-hook #'lsp)
+
+  (lsp-register-client
+   (make-lsp-client :new-connection (lsp-stdio-connection "pyls")
+                    :major-modes '(python-mode)
+                    :server-id 'pyls))
+  (setq company-minimum-prefix-length 1
+        company-idle-delay 0.500) ;; default is 0.2
+  :commands lsp)
+
+(use-package lsp-ui
+  :ensure t
+  :custom-face
+  (lsp-ui-doc-background ((t (:background ni))))
+  :init (setq lsp-ui-doc-enable t
+              lsp-ui-doc-include-signature t
+
+              lsp-enable-snippet nil
+              lsp-ui-sideline-enable nil
+              lsp-ui-peek-enable nil
+
+              lsp-ui-doc-position              'at-point
+              lsp-ui-doc-header                nil
+              lsp-ui-doc-border                "white"
+              lsp-ui-doc-include-signature     t
+              lsp-ui-sideline-update-mode      'point
+              lsp-ui-sideline-delay            1
+              lsp-ui-sideline-ignore-duplicate t
+              lsp-ui-peek-always-show          t
+              lsp-ui-flycheck-enable           nil
+              )
+  :bind (:map lsp-ui-mode-map
+              ([remap xref-find-definitions] . lsp-ui-peek-find-definitions)
+              ([remap xref-find-references] . lsp-ui-peek-find-references)
+              ("C-c u" . lsp-ui-imenu))
+  :config
+  (setq lsp-ui-sideline-ignore-duplicate t)
+  (add-hook 'lsp-mode-hook 'lsp-ui-mode))
+
+(setq lsp-prefer-capf t)
 
 (provide 'init-lsp)
 ;;; init-lsp.el ends here
