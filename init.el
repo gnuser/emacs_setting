@@ -76,6 +76,8 @@
 
 ;; IDE
 (require 'init-neotree)
+(require 'init-search)
+
 ;; (require 'init-benchmark)
 
 ;; MacOS specific

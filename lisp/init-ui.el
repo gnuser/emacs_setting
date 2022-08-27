@@ -10,7 +10,7 @@
   :ensure t
   :init
   (load-theme 'dracula t))
-  
+
 (use-package doom-modeline
   :ensure t
   :hook (after-init . doom-modeline-mode)
