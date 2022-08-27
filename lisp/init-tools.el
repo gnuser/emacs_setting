@@ -283,5 +283,9 @@
   :ensure t
   :init (global-undo-tree-mode))
 
+(use-package all-the-icons
+  :after memoize
+  :load-path "site-lisp/all-the-icons")
+
 (provide 'init-tools)
 ;;; init-tools.el ends here

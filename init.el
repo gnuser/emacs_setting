@@ -55,6 +55,10 @@
 (let ((dir (locate-user-emacs-file "lisp")))
   (add-to-list 'load-path (file-name-as-directory dir))
   (add-to-list 'load-path (file-name-as-directory (expand-file-name "lang" dir))))
+
+(let ((default-directory "~/.emacs.d/site-lisp/"))
+  (normal-top-level-add-subdirs-to-load-path))
+
 (setq custom-file (locate-user-emacs-file "custom.el"))
 
 (require 'init-packages)
@@ -68,6 +72,7 @@
 (require 'init-dev)
 (require 'init-dired)
 (require 'init-minibuffer)
+(require 'init-rainbow)
 
 ;; standalone apps
 (require 'init-text)
