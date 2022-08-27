@@ -6,13 +6,11 @@
 ;;; Code:
 
 ;; Use default theme in terminals
-(use-package doom-themes
+(use-package dracula-theme
   :ensure t
-  :when (display-graphic-p)
-  :config
-  (load-theme 'doom-one t)
-  (doom-themes-org-config))
-
+  :init
+  (load-theme 'dracula t))
+  
 (use-package doom-modeline
   :ensure t
   :hook (after-init . doom-modeline-mode)

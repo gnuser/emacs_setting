@@ -4,6 +4,10 @@
 (defvar my/packages '(
 		      use-package
 		      ;; base
+              ;; ui
+              dracula-theme
+              ;; benmark
+              benchmark-init
 		      ;; --- Navi
 		      ;; --- Auto-completion ---
 		      company
