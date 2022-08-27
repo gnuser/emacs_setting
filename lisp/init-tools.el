@@ -283,9 +283,5 @@
   :ensure t
   :init (global-undo-tree-mode))
 
-(use-package smart-mode-line
-  :ensure t
-  :init (sml/setup))
-
 (provide 'init-tools)
 ;;; init-tools.el ends here
