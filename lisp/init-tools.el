@@ -265,5 +265,27 @@
   ;; print messages in current channel buffer
   (rcirc-always-use-server-buffer-flag nil))
 
+(use-package amx
+  :ensure t
+  :init (amx-mode))
+
+(use-package ace-window
+  :ensure t
+  :bind (("C-x o" . 'ace-window)))
+
+(use-package mwim
+  :ensure t
+  :bind
+  ("C-a" . mwim-beginning-of-code-or-line)
+  ("C-e" . mwim-end-of-code-or-line))
+
+(use-package undo-tree
+  :ensure t
+  :init (global-undo-tree-mode))
+
+(use-package smart-mode-line
+  :ensure t
+  :init (sml/setup))
+
 (provide 'init-tools)
 ;;; init-tools.el ends here
