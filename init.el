@@ -62,9 +62,28 @@
 (require 'init-utils)
 (require 'init-ui)
 (require 'init-tools)
-(require 'init-evil)
+;; (require 'init-evil)
 (require 'init-lsp)
 (require 'init-git)
+(require 'init-dev)
+(require 'init-dired)
+(require 'init-minibuffer)
+
+;; standalone apps
+(require 'init-text)
+
+;; MacOS specific
+(when (eq system-type 'darwin)
+  (require 'init-osx))
+
+(when (file-exists-p custom-file)
+  (load custom-file))
+
+(provide 'init)
+
+;;; init.el ends here
+
+
 
 
 

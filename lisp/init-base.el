@@ -200,9 +200,14 @@
 
 ;; Server mode.
 ;; Use emacsclient to connect
-;;(use-package server
-;;  :ensure nil
-;;  :hook (after-init . server-mode))
+(use-package server
+  :ensure nil
+  :hook (after-init . server-mode))
+
+;; Workaround with minified source files
+(use-package so-long
+  :ensure nil
+  :hook (after-init . global-so-long-mode))
 
 ;; Completion engine
 (use-package minibuffer
@@ -308,6 +313,20 @@
          ("C-c C-n" . reb-next-match))
   :custom
   (reb-re-syntax 'string))
+
+;; window layout manager
+;;
+;; gt next-tab
+;; gT prev-tab
+(use-package tab-bar
+  :ensure nil
+  :hook (after-init . tab-bar-mode)
+  :custom
+  (tab-bar-show nil)
+  (tab-bar-tab-hints t)
+  (tab-bar-close-button-show nil)
+  (tab-bar-tab-name-function 'tab-bar-tab-name-all)
+  (tab-bar-format '(tab-bar-format-tabs tab-bar-separator)))
 
 (use-package newcomment
   :ensure nil
