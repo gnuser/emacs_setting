@@ -82,6 +82,7 @@
 ;; IDE
 (require 'init-neotree)
 (require 'init-search)
+(require 'init-treesitter)
 
 ;; (require 'init-benchmark)
 

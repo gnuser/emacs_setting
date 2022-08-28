@@ -523,6 +523,17 @@ Else, call `comment-or-uncomment-region' on the current line."
 
 (xterm-mouse-mode 1)
 
+;; 快速打开配置文件
+(defun open-init-file()
+  (interactive)
+  (find-file "~/.emacs.d/init.el"))
+
+
+(add-hook 'xref-backend-functions #'dumb-jump-xref-activate)
+
+;; 这一行代码，将函数 open-init-file 绑定到 <f2> 键上
+(global-set-key (kbd "<f9>") 'open-init-file)
+
 (provide 'init-base)
 
 ;;; init-base.el ends here

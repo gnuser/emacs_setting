@@ -235,6 +235,8 @@
 (require 'init-python)
 (require 'init-elisp)
 (require 'init-sh)
+(require 'init-web)
+(require 'init-typescript)
 
 (provide 'init-dev)
 
