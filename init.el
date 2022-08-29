@@ -77,6 +77,7 @@
 ;; standalone apps
 (require 'init-text)
 (require 'init-shell)
+(require 'init-edit)
 
 
 ;; IDE
