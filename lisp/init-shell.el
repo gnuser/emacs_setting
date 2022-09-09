@@ -105,8 +105,8 @@ current directory."
 (use-package esh-mode
   :ensure nil
   :bind (:map eshell-mode-map
-         ([remap kill-region] . backward-kill-word)
-         ([remap delete-char] . eshell-delchar-or-maybe-eof))
+              ([remap kill-region] . backward-kill-word)
+              ([remap delete-char] . eshell-delchar-or-maybe-eof))
   :config
   ;; Delete the last "word"
   (dolist (ch '(?_ ?- ?.))

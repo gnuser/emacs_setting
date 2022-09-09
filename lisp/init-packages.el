@@ -1,59 +1,59 @@
-(require 'cl)
+;; (require 'cl)
 
 ;; Add Packages
-(defvar my/packages '(
-		              use-package
-                      quelpa
-		              ;; base
-                      ;; ui
-                      dracula-theme
-                      ;; benmark
-                      benchmark-init
-		              ;; --- Navi
-		              ;; --- Auto-completion ---
-		              company
-		              ;; --- Better Editor ---
-		              hungry-delete
-		              swiper
-		              counsel
-		              smartparens
-		              ;; --- Major Mode ---
-		              js2-mode
-		              ;; --- Minor Mode ---
-		              nodejs-repl
-		              exec-path-from-shell
-		              ;; --- Themes ---
-		              monokai-theme
-		              ;; solarized-theme
-		              ;; -- Ruby
-		              flymake-ruby
-		              prettier-js
-		              yasnippet
-		              flycheck
-		              lsp-mode
-		              quelpa-use-package
-		              ) "Default packages")
+;; (defvar my/packages '(
+;; 		              use-package
+;;                       quelpa
+;; 		              ;; base
+;;                       ;; ui
+;;                       dracula-theme
+;;                       ;; benmark
+;;                       benchmark-init
+;; 		              ;; --- Navi
+;; 		              ;; --- Auto-completion ---
+;; 		              company
+;; 		              ;; --- Better Editor ---
+;; 		              hungry-delete
+;; 		              swiper
+;; 		              counsel
+;; 		              smartparens
+;; 		              ;; --- Major Mode ---
+;; 		              js2-mode
+;; 		              ;; --- Minor Mode ---
+;; 		              nodejs-repl
+;; 		              exec-path-from-shell
+;; 		              ;; --- Themes ---
+;; 		              monokai-theme
+;; 		              ;; solarized-theme
+;; 		              ;; -- Ruby
+;; 		              flymake-ruby
+;; 		              prettier-js
+;; 		              yasnippet
+;; 		              flycheck
+;; 		              lsp-mode
+;; 		              quelpa-use-package
+;; 		              ) "Default packages")
 
-(setq package-selected-packages my/packages)
+;; (setq package-selected-packages my/packages)
 
-(defun my/packages-installed-p ()
-  (loop for pkg in my/packages
-	    when (not (package-installed-p pkg)) do (return nil)
-	    finally (return t)))
+;; (defun my/packages-installed-p ()
+;;   (loop for pkg in my/packages
+;; 	    when (not (package-installed-p pkg)) do (return nil)
+;; 	    finally (return t)))
 
-(unless (my/packages-installed-p)
-  (message "%s" "Refreshing package database...")
-  (package-refresh-contents)
-  (dolist (pkg my/packages)
-    (when (not (package-installed-p pkg))
-      (package-install pkg))))
+;;(unless (my/packages-installed-p)
+;;  (message "%s" "Refreshing package database...")
+;;  (package-refresh-contents)
+;;  (dolist (pkg my/packages)
+;;    (when (not (package-installed-p pkg))
+;;      (package-install pkg))))
 
-(use-package auto-package-update
-  :ensure t
-  :config
-  (setq auto-package-update-delete-old-versions t
-        auto-package-update-interval 4)
-  (auto-package-update-maybe))
+;;(use-package auto-package-update
+;;  :ensure t
+;;  :config
+;;  (setq auto-package-update-delete-old-versions t
+;;auto-package-update-interval 4)
+;;  (auto-package-update-maybe))
 
 (unless (package-installed-p 'quelpa)
   (with-temp-buffer

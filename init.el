@@ -1,6 +1,9 @@
 ;;; init.el --- The main entry for emacs -*- lexical-binding: t -*-
 ;;; Commentary:
 ;;; Code:
+;;(require 'benchmark-init)
+;; To disable collection of benchmark data after init is done.
+;;(add-hook 'after-init-hook 'benchmark-init/deactivate)
 
 ;; A big contributor to startup times is garbage collection. We up the gc
 ;; threshold to temporarily prevent it from running, and then reset it by the
@@ -71,22 +74,21 @@
 (require 'init-git)
 (require 'init-dev)
 (require 'init-dired)
-(require 'init-minibuffer)
+;;(require 'init-minibuffer)
 (require 'init-rainbow)
 
 ;; standalone apps
 (require 'init-text)
-(require 'init-shell)
+;;(require 'init-shell)
 (require 'init-edit)
 
 
 ;; IDE
 (require 'init-neotree)
 (require 'init-search)
-(require 'init-treesitter)
+;; (require 'init-treesitter)
 
-;; (require 'init-benchmark)
-
+;;(require 'init-benchmark)
 ;; MacOS specific
 (when (eq system-type 'darwin)
   (require 'init-osx))

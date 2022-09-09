@@ -202,9 +202,9 @@
 
 ;; Server mode.
 ;; Use emacsclient to connect
-(use-package server
-  :ensure nil
-  :hook (after-init . server-mode))
+;; (use-package server
+;;   :ensure nil
+;;   :hook (after-init . server-mode))
 
 ;; Workaround with minified source files
 (use-package so-long
@@ -212,43 +212,43 @@
   :hook (after-init . global-so-long-mode))
 
 ;; Completion engine
-(use-package minibuffer
-  :ensure nil
-  :bind (:map minibuffer-local-map
-         ([escape] . abort-recursive-edit)
-         :map minibuffer-local-ns-map
-         ([escape] . abort-recursive-edit)
-         :map minibuffer-local-completion-map
-         ([escape] . abort-recursive-edit)
-         :map minibuffer-local-must-match-map
-         ([escape] . abort-recursive-edit)
-         :map minibuffer-local-isearch-map
-         ([escape] . abort-recursive-edit))
-  :custom
-  ;; Default minibuffer is fine-tuned since Emacs 29
-  (completion-auto-help t)
-  (completion-show-help nil)
-  (completion-cycle-threshold nil)
-  (completion-auto-select 'second-tab)
-  (enable-recursive-minibuffers t)
-  (minibuffer-depth-indicate-mode t)
-  (minibuffer-eldef-shorten-default t)
-  (minibuffer-electric-default-mode t)
-  ;; Don't insert completion at point into minibuffer
-  (minibuffer-completion-auto-choose nil)
-  ;; One frame one minibuffer.
-  (minibuffer-follows-selected-frame nil)
-  ;; Ignore cases when complete
-  (completion-ignore-case t)
-  (read-buffer-completion-ignore-case t)
-  (read-file-name-completion-ignore-case t)
-  ;; `selectrum', `vertico' and `icomplete' will honoring
-  (completion-styles '(basic partial-completion substring flex))
-  (completion-category-overrides '((buffer (styles . (flex)))))
-  ;; vertical view
-  (completions-format 'one-column)
-  (completions-max-height 13)
-  (completions-detailed t))
+;; (use-package minibuffer
+;;   :ensure nil
+;;   :bind (:map minibuffer-local-map
+;;               ([escape] . abort-recursive-edit)
+;;               :map minibuffer-local-ns-map
+;;               ([escape] . abort-recursive-edit)
+;;               :map minibuffer-local-completion-map
+;;               ([escape] . abort-recursive-edit)
+;;               :map minibuffer-local-must-match-map
+;;               ([escape] . abort-recursive-edit)
+;;               :map minibuffer-local-isearch-map
+;;               ([escape] . abort-recursive-edit))
+;;   :custom
+;;   ;; Default minibuffer is fine-tuned since Emacs 29
+;;   (completion-auto-help t)
+;;   (completion-show-help nil)
+;;   (completion-cycle-threshold nil)
+;;   (completion-auto-select 'second-tab)
+;;   (enable-recursive-minibuffers t)
+;;   (minibuffer-depth-indicate-mode t)
+;;   (minibuffer-eldef-shorten-default t)
+;;   (minibuffer-electric-default-mode t)
+;;   ;; Don't insert completion at point into minibuffer
+;;   (minibuffer-completion-auto-choose nil)
+;;   ;; One frame one minibuffer.
+;;   (minibuffer-follows-selected-frame nil)
+;;   ;; Ignore cases when complete
+;;   (completion-ignore-case t)
+;;   (read-buffer-completion-ignore-case t)
+;;   (read-file-name-completion-ignore-case t)
+;;   ;; `selectrum', `vertico' and `icomplete' will honoring
+;;   (completion-styles '(basic partial-completion substring flex))
+;;   (completion-category-overrides '((buffer (styles . (flex)))))
+;;   ;; vertical view
+;;   (completions-format 'one-column)
+;;   (completions-max-height 13)
+;;   (completions-detailed t))
 
 ;; Holidays
 (use-package calendar
@@ -310,9 +310,9 @@
   :ensure nil
   :commands re-builder
   :bind (:map reb-mode-map
-         ("C-c C-k" . reb-quit)
-         ("C-c C-p" . reb-prev-match)
-         ("C-c C-n" . reb-next-match))
+              ("C-c C-k" . reb-quit)
+              ("C-c C-p" . reb-prev-match)
+              ("C-c C-n" . reb-next-match))
   :custom
   (reb-re-syntax 'string))
 
@@ -370,7 +370,7 @@ Else, call `comment-or-uncomment-region' on the current line."
 (use-package comint
   :ensure nil
   :bind (:map comint-mode-map
-         ([remap kill-region]   . backward-kill-word))
+              ([remap kill-region]   . backward-kill-word))
   :custom
   ;; Make the prompt of "*Python*" buffer readonly
   (comint-prompt-read-only t)
