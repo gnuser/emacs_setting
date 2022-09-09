@@ -251,41 +251,41 @@
 ;;   (completions-detailed t))
 
 ;; Holidays
-(use-package calendar
-  :ensure nil
-  :hook (calendar-today-visible . calendar-mark-today)
-  :custom
-  (calendar-chinese-all-holidays-flag t)
-  (holiday-local-holidays `((holiday-fixed 3 8  "Women's Day")
-                            (holiday-fixed 3 12 "Arbor Day")
-                            ,@(cl-loop for i from 1 to 3
-                                       collect `(holiday-fixed 5 ,i "International Workers' Day"))
-                            (holiday-fixed 5 4  "Chinese Youth Day")
-                            (holiday-fixed 6 1  "Children's Day")
-                            (holiday-fixed 9 10 "Teachers' Day")
-                            ,@(cl-loop for i from 1 to 7
-                                       collect `(holiday-fixed 10 ,i "National Day"))
-                            (holiday-fixed 10 24 "Programmers' Day")
-                            (holiday-fixed 11 11 "Singles' Day")))
-  (holiday-other-holidays '((holiday-fixed 4 22 "Earth Day")
-                            (holiday-fixed 4 23 "World Book Day")
-                            (holiday-sexp '(if (or (zerop (% year 400))
-                                                   (and (% year 100) (zerop (% year 4))))
-                                               (list 9 12 year)
-                                             (list 9 13 year))
-                                          "World Programmers' Day")
-                            (holiday-fixed 10 10 "World Mental Health Day")))
-  (calendar-holidays `(,@holiday-general-holidays
-                       ,@holiday-oriental-holidays
-                       ,@holiday-christian-holidays
-                       ,@holiday-other-holidays
-                       ,@holiday-local-holidays))
-  (calendar-mark-holidays-flag t)
-  (calendar-mark-diary-entries-flag nil)
-  ;; Prefer +0800 over CST
-  (calendar-time-zone-style 'numeric)
-  ;; year/month/day
-  (calendar-date-style 'iso))
+;; (use-package calendar
+;;   :ensure nil
+;;   :hook (calendar-today-visible . calendar-mark-today)
+;;   :custom
+;;   (calendar-chinese-all-holidays-flag t)
+;;   (holiday-local-holidays `((holiday-fixed 3 8  "Women's Day")
+;;                             (holiday-fixed 3 12 "Arbor Day")
+;;                             ,@(cl-loop for i from 1 to 3
+;;                                        collect `(holiday-fixed 5 ,i "International Workers' Day"))
+;;                             (holiday-fixed 5 4  "Chinese Youth Day")
+;;                             (holiday-fixed 6 1  "Children's Day")
+;;                             (holiday-fixed 9 10 "Teachers' Day")
+;;                             ,@(cl-loop for i from 1 to 7
+;;                                        collect `(holiday-fixed 10 ,i "National Day"))
+;;                             (holiday-fixed 10 24 "Programmers' Day")
+;;                             (holiday-fixed 11 11 "Singles' Day")))
+;;   (holiday-other-holidays '((holiday-fixed 4 22 "Earth Day")
+;;                             (holiday-fixed 4 23 "World Book Day")
+;;                             (holiday-sexp '(if (or (zerop (% year 400))
+;;                                                    (and (% year 100) (zerop (% year 4))))
+;;                                                (list 9 12 year)
+;;                                              (list 9 13 year))
+;;                                           "World Programmers' Day")
+;;                             (holiday-fixed 10 10 "World Mental Health Day")))
+;;   (calendar-holidays `(,@holiday-general-holidays
+;;                        ,@holiday-oriental-holidays
+;;                        ,@holiday-christian-holidays
+;;                        ,@holiday-other-holidays
+;;                        ,@holiday-local-holidays))
+;;   (calendar-mark-holidays-flag t)
+;;   (calendar-mark-diary-entries-flag nil)
+;;   ;; Prefer +0800 over CST
+;;   (calendar-time-zone-style 'numeric)
+;;   ;; year/month/day
+;;   (calendar-date-style 'iso))
 
 ;; Appointment
 (use-package appt
@@ -320,16 +320,17 @@
 ;;
 ;; gt next-tab
 ;; gT prev-tab
-(use-package tab-bar
-  :ensure nil
-  :hook (after-init . tab-bar-mode)
-  :custom
-  (tab-bar-show nil)
-  (tab-bar-tab-hints t)
-  (tab-bar-close-button-show nil)
-  (tab-bar-tab-name-function 'tab-bar-tab-name-all)
-  (tab-bar-format '(tab-bar-format-tabs tab-bar-separator)))
+;; (use-package tab-bar
+;;   :ensure nil
+;;   :hook (after-init . tab-bar-mode)
+;;   :custom
+;;   (tab-bar-show nil)
+;;   (tab-bar-tab-hints t)
+;;   (tab-bar-close-button-show nil)
+;;   (tab-bar-tab-name-function 'tab-bar-tab-name-all)
+;;   (tab-bar-format '(tab-bar-format-tabs tab-bar-separator)))
 
+;; comment or unment M ;
 (use-package newcomment
   :ensure nil
   :bind ([remap comment-dwim] . comment-or-uncomment)
