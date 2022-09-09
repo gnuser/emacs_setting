@@ -65,11 +65,11 @@
 (use-package isearch
   :ensure nil
   :bind (:map isearch-mode-map
-         ;; consistent with ivy-occur
-         ("C-c C-o"                   . isearch-occur)
-         ([escape]                    . isearch-cancel)
-         ;; Edit the search string instead of jumping back
-         ([remap isearch-delete-char] . isearch-del-char))
+              ;; consistent with ivy-occur
+              ("C-c C-o"                   . isearch-occur)
+              ([escape]                    . isearch-cancel)
+              ;; Edit the search string instead of jumping back
+              ([remap isearch-delete-char] . isearch-del-char))
   :config
   (define-advice isearch-occur (:after (_regexp &optional _nlines))
     (isearch-exit))
@@ -111,7 +111,7 @@
 (use-package separedit
   :ensure t
   :bind (:map prog-mode-map
-         ("C-c '" . separedit))
+              ("C-c '" . separedit))
   :custom
   (separedit-default-mode 'markdown-mode)
   (separedit-remove-trailing-spaces-in-comment t)
@@ -238,32 +238,32 @@
   (atomic-chrome-url-major-mode-alist '(("github\\.com" . gfm-mode))))
 
 ;; IRC client
-(use-package rcirc
-  :ensure nil
-  :hook (rcirc-mode . rcirc-omit-mode)
-  :config
-  (with-no-warnings
-    (defun rcirc-notify-me (proc sender _response target text)
-      "Notify me if SENDER sends a TEXT that matches my nick."
-      (when (and (not (string= (rcirc-nick proc) sender))        ;; Skip my own message
-                 (not (string= (rcirc-server-name proc) sender)) ;; Skip the response of server
-                 (rcirc-channel-p target))
-        (when (string-match (rcirc-nick proc) text)
-          (notify-send :title (format "%s mention you" sender)
-                       :body text
-                       :urgency 'critical))))
+;; (use-package rcirc
+;;   :ensure nil
+;;   :hook (rcirc-mode . rcirc-omit-mode)
+;;   :config
+;;   (with-no-warnings
+;;     (defun rcirc-notify-me (proc sender _response target text)
+;;       "Notify me if SENDER sends a TEXT that matches my nick."
+;;       (when (and (not (string= (rcirc-nick proc) sender))        ;; Skip my own message
+;;                  (not (string= (rcirc-server-name proc) sender)) ;; Skip the response of server
+;;                  (rcirc-channel-p target))
+;;         (when (string-match (rcirc-nick proc) text)
+;;           (notify-send :title (format "%s mention you" sender)
+;;                        :body text
+;;                        :urgency 'critical))))
 
-    (add-hook 'rcirc-print-functions #'rcirc-notify-me))
-  :custom
-  (rcirc-default-port 7000)
-  (rcirc-kill-channel-buffers t)
-  ;; Always cycle for completions
-  (rcirc-cycle-completion-flag t)
-  (rcirc-auto-authenticate-flag t)
-  (rcirc-authenticate-before-join t)
-  (rcirc-fill-column #'window-text-width)
-  ;; print messages in current channel buffer
-  (rcirc-always-use-server-buffer-flag nil))
+;;     (add-hook 'rcirc-print-functions #'rcirc-notify-me))
+;;   :custom
+;;   (rcirc-default-port 7000)
+;;   (rcirc-kill-channel-buffers t)
+;;   ;; Always cycle for completions
+;;   (rcirc-cycle-completion-flag t)
+;;   (rcirc-auto-authenticate-flag t)
+;;   (rcirc-authenticate-before-join t)
+;;   (rcirc-fill-column #'window-text-width)
+;;   ;; print messages in current channel buffer
+;;   (rcirc-always-use-server-buffer-flag nil))
 
 (use-package amx
   :ensure t

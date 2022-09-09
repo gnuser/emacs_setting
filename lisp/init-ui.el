@@ -46,11 +46,6 @@
   (help-window-select t)
   (help-enable-variable-value-editing t))
 
-(use-package all-the-icons
-  :ensure t
-  :when (display-graphic-p)
-  :demand t)
-
 (use-package dashboard
   :ensure t
   :init

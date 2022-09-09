@@ -14,11 +14,11 @@
   :ensure t
   :hook (prog-mode . company-mode)
   :bind (:map company-mode-map
-         ([remap completion-at-point] . company-complete)
-         :map company-active-map
-         ("C-s"     . company-filter-candidates)
-         ([tab]     . company-complete-common-or-cycle)
-         ([backtab] . company-select-previous-or-abort))
+              ([remap completion-at-point] . company-complete)
+              :map company-active-map
+              ("C-s"     . company-filter-candidates)
+              ([tab]     . company-complete-common-or-cycle)
+              ([backtab] . company-select-previous-or-abort))
   :config
   (define-advice company-capf--candidates (:around (func &rest args))
     "Try default completion styles."
@@ -63,7 +63,7 @@
   (lsp-enable-imenu t)
   (lsp-enable-completion-at-point nil)
 
-  :config  
+  :config
   (add-hook 'go-mode-hook #'lsp)
   (add-hook 'python-mode-hook #'lsp)
   (add-hook 'c++-mode-hook #'lsp)
