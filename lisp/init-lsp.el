@@ -77,7 +77,7 @@
   (add-hook 'dockerfile-mode-hook #'lsp)
   (add-hook 'shell-mode-hook #'lsp)
   (add-hook 'css-mode-hook #'lsp)
-
+  
   (lsp-register-client
    (make-lsp-client :new-connection (lsp-stdio-connection "pyls")
                     :major-modes '(python-mode)

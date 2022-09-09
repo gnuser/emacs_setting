@@ -5,8 +5,6 @@
   ;; see https://github.com/joaotavora/eglot/issues/624 and https://github.com/joaotavora/eglot#handling-quirky-servers
   (define-derived-mode typescriptreact-mode typescript-mode
     "TypeScript TSX")
-
-  ;; use our derived mode for tsx files
   (add-to-list 'auto-mode-alist '("\\.tsx?\\'" . typescriptreact-mode))
   ;; by default, typescript-mode is mapped to the treesitter typescript parser
   ;; use our derived mode to map both .tsx AND .ts -> typescriptreact-mode -> treesitter tsx
@@ -34,5 +32,18 @@
 
 (use-package eglot
   :ensure t)
+
+;; https://github.com/Galooshi/emacs-import-js
+(use-package import-js
+  :ensure t
+  :init
+  (setq js-indent-level 2)
+  (add-hook 'typescript-mode-hook (lambda ()
+                                    (unless import-js-process
+                                      (run-import-js))))
+  (add-hook 'after-save-hook
+            (lambda ()
+              (when (eq major-mode 'typescriptreact-mode)
+                (import-js-fix)))))
 
 (provide 'init-typescript)

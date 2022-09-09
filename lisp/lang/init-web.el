@@ -1,4 +1,4 @@
-; web tools
+                                        ; web tools
 (use-package emmet-mode)
 ;; (use-package web-mode
 ;;   :config
@@ -18,7 +18,7 @@
 ;;     (setq tab-width 4)
 
 ;;     (add-hook 'web-mode-hook  'emmet-mode)))
-(use-package web-beautify)
+;; (use-package web-beautify)
 
 ;; typescirpt tide
 (use-package typescript-mode)
