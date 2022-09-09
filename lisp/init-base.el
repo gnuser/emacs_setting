@@ -186,7 +186,6 @@
 ;; Highlight current line in GUI
 (use-package hl-line
   :ensure nil
-  :when (display-graphic-p)
   :hook (after-init . global-hl-line-mode))
 
 ;; Enable `repeat-mode' to reduce key sequence length
