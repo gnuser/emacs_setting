@@ -66,8 +66,8 @@
 (use-package browse-at-remote
   :ensure t
   :bind (:map vc-prefix-map
-         ("b" . bar-browse)         ;; was `vc-switch-backend', obsolete since 28.1
-         ("c" . bar-to-clipboard))
+              ("b" . bar-browse)         ;; was `vc-switch-backend', obsolete since 28.1
+              ("c" . bar-to-clipboard))
   :custom
   (browse-at-remote-add-line-number-if-no-region-selected nil))
 
@@ -78,6 +78,15 @@
          ("\\.gitconfig\\'"     . conf-unix-mode)
          ("\\.gitattributes\\'" . conf-unix-mode)))
 
+(use-package emojify
+  :hook (after-init . global-emojify-mode))
+
+(require 'gitmoji)
+(setq gitmoji--insert-utf8-emoji nil
+      gitmoji--display-utf8-emoji nil) ;; These are the defaults.
+
+
+;; These are the defaults.
 (provide 'init-git)
 
 ;;; init-git.el ends here
