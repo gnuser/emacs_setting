@@ -237,6 +237,7 @@
 (require 'init-sh)
 ;;(require 'init-web)
 (require 'init-typescript)
+(require 'init-solidity)
 ;;(require 'init-kotlin)
 
 (provide 'init-dev)
