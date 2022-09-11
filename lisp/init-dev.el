@@ -232,7 +232,7 @@
 ;;(require 'init-ocaml)
 ;;(require 'init-bazel)
 ;;(require 'init-haskell)
-;;(require 'init-python)
+(require 'init-python)
 (require 'init-elisp)
 (require 'init-sh)
 ;;(require 'init-web)
