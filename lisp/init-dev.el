@@ -236,6 +236,7 @@
 (require 'init-elisp)
 (require 'init-sh)
 ;;(require 'init-web)
+(require 'init-treesitter)
 (require 'init-typescript)
 (require 'init-solidity)
 ;;(require 'init-kotlin)
