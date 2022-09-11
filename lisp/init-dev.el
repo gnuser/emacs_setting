@@ -239,6 +239,7 @@
 (require 'init-treesitter)
 (require 'init-typescript)
 (require 'init-solidity)
+(require 'init-v)
 ;;(require 'init-kotlin)
 
 (provide 'init-dev)
