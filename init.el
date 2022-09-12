@@ -88,6 +88,11 @@
 (require 'init-search)
 ;; (require 'init-treesitter)
 
+;; music
+(require 'init-bongo)
+(require 'init-emms)
+
+
 ;;(require 'init-benchmark)
 ;; MacOS specific
 (when (eq system-type 'darwin)
