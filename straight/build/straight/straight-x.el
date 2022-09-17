@@ -1,1 +1,1 @@
-/Users/chenjing/.emacs.d/straight/repos/straight.el/straight-x.el
+/Users/jing.chencrypto.com/.emacs.d/straight/repos/straight.el/straight-x.el
