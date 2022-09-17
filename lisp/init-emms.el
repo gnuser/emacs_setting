@@ -2,9 +2,9 @@
 (require 'emms-setup)
 (emms-all)
 (emms-default-players)
-(setq emms-source-file-default-directory "/Users/chenjing/workspace/github/gnuser/QQFlacMusicDownloader/music") ;; Change to your music folder
+(setq emms-source-file-default-directory "/Users/jing.chencrypto.com/Music/download") ;; Change to your music folder
 
-(setq emms-lyrics-dir "/Users/chenjing/workspace/github/gnuser/QQFlacMusicDownloader/music")
+(setq emms-lyrics-dir "/Users/jing.chencrypto.com/Music/download")
 
 ;; Choose one of these
 (setq emms-info-functions '(emms-info-tinytag))  ;; When using Tinytag
@@ -26,7 +26,7 @@
 
 (define-key emms-playlist-mode-map (kbd "S s") 'emms-playlist-sort-by-score)
 
-(global-set-key (kbd "<f3>") 'emms-playlist-mode-go-popup)
+(global-set-key (kbd "<f12>") 'emms)
 
 (defun emms-playlist-mode-jump ()
   "Jump to the directory of track at point in `emms-playlist-buffer'."
