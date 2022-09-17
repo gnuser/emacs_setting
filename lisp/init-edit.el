@@ -18,10 +18,10 @@
 
 (use-package multiple-cursors
   :ensure t
-  :bind ("C-i" . mc/edit-lines)
+  :bind ("C-c i" . mc/edit-lines)
   :bind ("C-c a" . mc/mark-all-words-like-this)
-  :bind ("C-c n" . mc/mark-previous-like-this-word)
-  :bind ("C-c m" . mc/mark-next-like-this-word)
+  :bind ("C-i" . mc/mark-previous-like-this-word)
+  :bind ("C-o" . mc/mark-next-like-this-word)
   )
 ;; macro
 ;; 1. C-x ( kmacro-start-macro
