@@ -16,6 +16,13 @@
 (use-package expand-region
   :bind ("M-=" . er/expand-region))
 
+(use-package multiple-cursors
+  :ensure t
+  :bind ("C-i" . mc/edit-lines)
+  :bind ("C-c a" . mc/mark-all-words-like-this)
+  :bind ("C-c n" . mc/mark-previous-like-this-word)
+  :bind ("C-c m" . mc/mark-next-like-this-word)
+  )
 ;; macro
 ;; 1. C-x ( kmacro-start-macro
 ;; 2. C-x ) kmacro-end-macro
