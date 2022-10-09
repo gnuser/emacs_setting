@@ -101,6 +101,8 @@
 (when (file-exists-p custom-file)
   (load custom-file))
 
+(xterm-mouse-mode 1)
+
 (provide 'init)
 
 ;;; init.el ends here

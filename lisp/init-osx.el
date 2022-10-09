@@ -44,5 +44,6 @@
   ;; Visit files opened outside of Emacs in existing frame, not a new one
   (ns-pop-up-frames nil))
 
+
 (provide 'init-osx)
 ;;; init-osx.el ends here

@@ -23,6 +23,11 @@
   :bind ("M-o" . mc/mark-previous-like-this-word)
   :bind ("M-p" . mc/mark-next-like-this-word)
   )
+
+(setq mac-command-modifier 'alt mac-option-modifier 'meta)
+(require 'mac-key-mode)
+(mac-key-mode 1)
+
 ;; macro
 ;; 1. C-x ( kmacro-start-macro
 ;; 2. C-x ) kmacro-end-macro
