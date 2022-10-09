@@ -20,8 +20,8 @@
   :ensure t
   :bind ("C-c i" . mc/edit-lines)
   :bind ("C-c a" . mc/mark-all-words-like-this)
-  :bind ("C-i" . mc/mark-previous-like-this-word)
-  :bind ("C-o" . mc/mark-next-like-this-word)
+  :bind ("M-o" . mc/mark-previous-like-this-word)
+  :bind ("M-p" . mc/mark-next-like-this-word)
   )
 ;; macro
 ;; 1. C-x ( kmacro-start-macro
