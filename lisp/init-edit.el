@@ -28,6 +28,7 @@
 (require 'mac-key-mode)
 (mac-key-mode 1)
 
+(setq mouse-drag-copy-region t)
 ;; macro
 ;; 1. C-x ( kmacro-start-macro
 ;; 2. C-x ) kmacro-end-macro
